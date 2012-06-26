@@ -1,0 +1,34 @@
+<?php
+/**
+ * @file
+ * Code for the SFSU Booking feature.
+ */
+
+include_once 'sfsu_booking.features.inc';
+
+/**
+ * Implementation of hook_modules_installed().
+ */
+function sfsu_booking_modules_installed($modules) {
+
+  // rebuild feature
+  features_rebuild();
+
+  // load feature vocabulary
+  $sfsu_booking_feature = features_get_info('feature', 'sfsu_booking');
+  $vocab_name = $sfsu_booking_feature->info['features']['taxonomy'][0];
+  $vocab = taxonomy_vocabulary_machine_name_load($vocab_name);
+
+  // ADD terms
+  $terms_feature = array('Available', 'Booked', 'Canceled');
+  foreach ($terms_feature as $term_feature) {
+    if (!($term =  array_shift(taxonomy_get_term_by_name($term_feature, $vocab_name)))) {
+      $term = new stdClass();
+      $term->name = $term_feature;
+      $term->vid = $vocab->vid;
+      taxonomy_term_save($term);
+    }
+  }
+
+}
+
