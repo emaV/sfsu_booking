@@ -272,11 +272,12 @@ function sfsu_booking_field_default_fields() {
       'settings' => array(
         'referenceable_roles' => array(
           2 => 0,
-          3 => '3',
+          3 => 0,
+          4 => '4',
         ),
         'referenceable_status' => array(
           0 => 0,
-          1 => 0,
+          1 => '1',
         ),
         'view' => array(
           'args' => array(),

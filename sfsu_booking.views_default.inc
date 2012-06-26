@@ -106,8 +106,7 @@ function sfsu_booking_views_default_views() {
   $handler->display->display_options['fields']['field_booking_status']['hide_empty'] = 0;
   $handler->display->display_options['fields']['field_booking_status']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_booking_status']['hide_alter_empty'] = 1;
-  $handler->display->display_options['fields']['field_booking_status']['click_sort_column'] = 'value';
-  $handler->display->display_options['fields']['field_booking_status']['type'] = 'list_default';
+  $handler->display->display_options['fields']['field_booking_status']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_booking_status']['group_column'] = 'value';
   $handler->display->display_options['fields']['field_booking_status']['field_api_classes'] = 0;
   /* Field: Bulk operations: Content */
@@ -349,6 +348,7 @@ function sfsu_booking_views_default_views() {
   $handler->display->display_options['style_options']['multiday_theme'] = '1';
   $handler->display->display_options['style_options']['theme_style'] = '1';
   $handler->display->display_options['style_options']['max_items'] = '0';
+  $handler->display->display_options['style_options']['groupby_times'] = 'half';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'calendar_entity';
@@ -396,6 +396,7 @@ function sfsu_booking_views_default_views() {
   $handler->display->display_options['style_options']['multiday_theme'] = '1';
   $handler->display->display_options['style_options']['theme_style'] = '1';
   $handler->display->display_options['style_options']['max_items'] = '0';
+  $handler->display->display_options['style_options']['groupby_times'] = 'half';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'calendar_entity';

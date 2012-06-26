@@ -13,6 +13,13 @@ function sfsu_booking_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'ant_appointment';
+  $strongarm->value = '1';
+  $export['ant_appointment'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'ant_pattern_appointment';
   $strongarm->value = '[node:field-user-host:name] - [node:field-time:medium]';
   $export['ant_pattern_appointment'] = $strongarm;
@@ -27,16 +34,16 @@ function sfsu_booking_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'ant_appointment';
-  $strongarm->value = '1';
-  $export['ant_appointment'] = $strongarm;
+  $strongarm->name = 'comment_anonymous_appointment';
+  $strongarm->value = 0;
+  $export['comment_anonymous_appointment'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_anonymous_appointment';
-  $strongarm->value = 0;
-  $export['comment_anonymous_appointment'] = $strongarm;
+  $strongarm->name = 'comment_appointment';
+  $strongarm->value = '2';
+  $export['comment_appointment'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -65,13 +72,6 @@ function sfsu_booking_strongarm() {
   $strongarm->name = 'comment_preview_appointment';
   $strongarm->value = '1';
   $export['comment_preview_appointment'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_appointment';
-  $strongarm->value = '2';
-  $export['comment_appointment'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
